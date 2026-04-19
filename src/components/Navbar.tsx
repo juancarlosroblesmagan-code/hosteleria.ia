@@ -4,9 +4,9 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 md:h-20 items-center justify-between px-4 lg:px-8 max-w-7xl mx-auto">
-        {/* Left: Logo */}
-        <a href="/" className="flex items-center space-x-2">
+        <a href="/" className="flex items-center space-x-3">
           <img src="/logo-hosteleria-ai.png" alt="HosteleríaAI Logo" className="h-8 md:h-10 object-contain" />
+          <span className="text-2xl md:text-3xl font-bold tracking-tight text-white font-display pt-1">Hostelería<span className="text-primary">IA</span></span>
         </a>
         
         {/* Center: Navigation Links */}

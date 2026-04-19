@@ -3,8 +3,9 @@ export default function Footer() {
     <footer className="bg-[#0A0D14] text-gray-400 border-t border-white/5 py-16">
       <div className="container px-4 lg:px-8 max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
         <div className="col-span-2">
-          <div className="mb-6">
+          <div className="mb-6 flex items-center space-x-3">
              <img src="/logo-hosteleria-ai.png" alt="HosteleríaAI Logo" className="h-8 object-contain" />
+             <span className="text-2xl font-bold tracking-tight text-white font-display pt-1">Hostelería<span className="text-primary">IA</span></span>
           </div>
           <p className="max-w-md text-sm leading-relaxed">
             Liderando la revolución de la inteligencia artificial para el sector de la hostelería en España y Latinoamérica. Transformamos tu forma de trabajar.
