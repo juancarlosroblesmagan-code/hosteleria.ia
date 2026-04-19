@@ -1,66 +1,71 @@
-import { Download, Mail, Phone, MapPin } from "lucide-react";
+import { Download, Mail, Phone } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24">
-      <div className="container px-4 max-w-5xl mx-auto">
+    <section id="contact" className="py-24 bg-background border-t border-white/5">
+      <div className="container px-4 lg:px-8 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Impulsa tu negocio hoy mismo</h2>
-            <p className="text-gray-600 mb-8 max-w-md">
+            <h3 className="text-primary text-sm font-bold tracking-widest uppercase mb-4">Contacto</h3>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+              Impulsa tu negocio <span className="text-primary">hoy mismo</span>
+            </h2>
+            <p className="text-gray-400 mb-10 max-w-md text-lg">
               Descubre cómo nuestras herramientas de IA pueden ayudarte a mejorar márgenes y ofrecer una mejor experiencia a tus clientes. Contacta directamente conmigo.
             </p>
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden shadow-sm border-2 border-amber-100">
-                  <img src="/fran_circle.png" alt="Fran Robles Cuesta - CEO" className="w-full h-full object-cover" />
+            
+            <div className="flex flex-col gap-6 mb-12">
+              <div className="flex items-center gap-5">
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/30 p-0.5">
+                  <img src="/fran_circle.png" alt="Fran Robles Cuesta - CEO" className="w-full h-full rounded-full object-cover" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900">Fran Robles Cuesta</h4>
-                  <p className="text-sm text-gray-500">CEO, Hostelería IA</p>
+                  <h4 className="font-bold text-white text-lg">Fran Robles Cuesta</h4>
+                  <p className="text-sm text-primary font-medium">CEO, Hostelería IA</p>
                 </div>
               </div>
               
-              <div className="flex gap-4 items-center">
-                <a href="/contacto.vcf" download className="inline-flex items-center justify-center rounded-md text-sm font-medium bg-amber-500 text-gray-900 h-10 px-4 py-2 hover:bg-amber-400 transition-colors gap-2">
+              <div className="flex">
+                <a href="/contacto.vcf" download className="inline-flex items-center justify-center rounded-lg text-sm font-bold bg-white/5 border border-white/10 text-white h-11 px-5 hover:bg-white/10 transition-colors gap-2">
                   <Download className="w-4 h-4" />
                   Descargar Contacto
                 </a>
               </div>
             </div>
             
-            <div className="mt-12 space-y-4">
-              <div className="flex items-center gap-3 text-gray-600">
-                <Phone className="w-5 h-5 text-amber-500" />
-                <span>+34 711 20 79 32</span>
+            <div className="space-y-5 bg-[#10131A] p-6 rounded-2xl border border-white/5 w-max">
+              <div className="flex items-center gap-4 text-gray-300">
+                <div className="bg-primary/10 p-2 rounded-full"><Phone className="w-5 h-5 text-primary" /></div>
+                <span className="font-medium">+34 711 20 79 32</span>
               </div>
-              <div className="flex items-center gap-3 text-gray-600">
-                <Mail className="w-5 h-5 text-amber-500" />
-                <span>info.hosteleria.ia@gmail.com</span>
+              <div className="flex items-center gap-4 text-gray-300">
+                <div className="bg-primary/10 p-2 rounded-full"><Mail className="w-5 h-5 text-primary" /></div>
+                <span className="font-medium">info.hosteleria.ia@gmail.com</span>
               </div>
             </div>
           </div>
           
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-            <h3 className="text-2xl font-bold mb-6">Solicitar Presupuesto</h3>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+          <div className="bg-[#10131A] p-8 md:p-10 rounded-3xl shadow-2xl border border-white/10 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none" />
+            <h3 className="text-2xl font-bold text-white mb-8">Solicitar Presupuesto</h3>
+            <form className="space-y-5 relative z-10" onSubmit={(e) => e.preventDefault()}>
               <div>
-                <label className="block text-sm font-medium mb-1">Nombre del Local</label>
-                <input type="text" className="w-full h-10 px-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Ej. Restaurante El Celler" />
+                <label className="block text-sm font-medium text-gray-400 mb-2">Nombre del Local</label>
+                <input type="text" className="w-full h-12 px-4 rounded-xl bg-background border border-white/10 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Ej. Restaurante El Celler" />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1">Tu Nombre</label>
-                <input type="text" className="w-full h-10 px-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Tu nombre" />
+                <label className="block text-sm font-medium text-gray-400 mb-2">Tu Nombre</label>
+                <input type="text" className="w-full h-12 px-4 rounded-xl bg-background border border-white/10 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Tu nombre" />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1">Email</label>
-                <input type="email" className="w-full h-10 px-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="email@tudominio.com" />
+                <label className="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                <input type="email" className="w-full h-12 px-4 rounded-xl bg-background border border-white/10 text-white focus:outline-none focus:border-primary transition-colors" placeholder="email@tudominio.com" />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1">¿Cómo podemos ayudarte?</label>
-                <textarea className="w-full h-24 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Describe brevemente tus necesidades..."></textarea>
+                <label className="block text-sm font-medium text-gray-400 mb-2">¿Cómo podemos ayudarte?</label>
+                <textarea className="w-full h-28 px-4 py-3 rounded-xl bg-background border border-white/10 text-white focus:outline-none focus:border-primary transition-colors resize-none" placeholder="Describe brevemente tus necesidades..."></textarea>
               </div>
-              <button type="submit" className="w-full h-12 bg-gray-900 text-white rounded-md font-medium hover:bg-gray-800 transition-colors">
+              <button type="submit" className="w-full h-14 bg-primary text-primary-foreground rounded-xl font-bold text-lg hover:bg-primary/90 transition-colors mt-4">
                 Enviar mensaje
               </button>
             </form>

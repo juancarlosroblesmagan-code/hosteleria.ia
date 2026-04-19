@@ -1,34 +1,37 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12">
-      <div className="container px-4 max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
+    <footer className="bg-[#0A0D14] text-gray-400 border-t border-white/5 py-16">
+      <div className="container px-4 lg:px-8 max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
         <div className="col-span-2">
-          <div className="mb-4">
-            <span className="text-2xl font-bold text-white tracking-tighter">Hostelería<span className="text-amber-500">IA</span></span>
+          <div className="mb-6">
+             <img src="/logo-hosteleria-ai.png" alt="HosteleríaAI Logo" className="h-8 object-contain" />
           </div>
-          <p className="max-w-xs text-sm text-gray-400">
-            Liderando la revolución de la inteligencia artificial para el sector de la hostelería en España y Latinoamérica.
+          <p className="max-w-md text-sm leading-relaxed">
+            Liderando la revolución de la inteligencia artificial para el sector de la hostelería en España y Latinoamérica. Transformamos tu forma de trabajar.
           </p>
         </div>
         <div>
-          <h4 className="text-white font-semibold mb-4">Enlaces</h4>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#services" className="hover:text-amber-500 transition-colors">Servicios</a></li>
-            <li><a href="#benefits" className="hover:text-amber-500 transition-colors">Beneficios</a></li>
-            <li><a href="#testimonials" className="hover:text-amber-500 transition-colors">Testimonios</a></li>
+          <h4 className="text-white font-bold mb-6 tracking-wide">ENLACES</h4>
+          <ul className="space-y-3 text-sm font-medium">
+            <li><a href="#services" className="hover:text-primary transition-colors">Servicios</a></li>
+            <li><a href="#benefits" className="hover:text-primary transition-colors">Beneficios</a></li>
+            <li><a href="#testimonials" className="hover:text-primary transition-colors">Testimonios</a></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-white font-semibold mb-4">Legal</h4>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-amber-500 transition-colors">Aviso Legal</a></li>
-            <li><a href="#" className="hover:text-amber-500 transition-colors">Política de Privacidad</a></li>
-            <li><a href="#" className="hover:text-amber-500 transition-colors">Política de Cookies</a></li>
+          <h4 className="text-white font-bold mb-6 tracking-wide">LEGAL</h4>
+          <ul className="space-y-3 text-sm font-medium">
+            <li><a href="#" className="hover:text-primary transition-colors">Aviso Legal</a></li>
+            <li><a href="#" className="hover:text-primary transition-colors">Política de Privacidad</a></li>
+            <li><a href="#" className="hover:text-primary transition-colors">Política de Cookies</a></li>
           </ul>
         </div>
       </div>
-      <div className="container px-4 max-w-6xl mx-auto mt-12 pt-8 border-t border-gray-800 text-sm text-center text-gray-500">
-        © {new Date().getFullYear()} HosteleríaIA. Todos los derechos reservados.
+      <div className="container px-4 lg:px-8 max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium">
+        <p>© {new Date().getFullYear()} HosteleríaIA. Todos los derechos reservados.</p>
+        <div className="flex gap-4">
+          <span>Diseñado y optimizado para la Hostelería</span>
+        </div>
       </div>
     </footer>
   );

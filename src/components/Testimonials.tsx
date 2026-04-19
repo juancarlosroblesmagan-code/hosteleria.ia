@@ -21,17 +21,25 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-gray-50">
-      <div className="container px-4 max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-16">Lo que dicen de nosotros</h2>
+    <section id="testimonials" className="py-24 bg-background">
+      <div className="container px-4 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h3 className="text-primary text-sm font-bold tracking-widest uppercase mb-4">Testimonios</h3>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+            Lo que dicen nuestros <span className="text-primary">clientes</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Más de 150 negocios de hostelería ya confían en nosotros para transformar su operación.
+          </p>
+        </div>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonio, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-              <p className="text-gray-600 italic mb-6">"{testimonio.text}"</p>
+            <div key={idx} className="bg-[#10131A] p-8 rounded-2xl border border-white/5 hover:bg-[#151922] transition-colors flex flex-col justify-between">
+              <p className="text-gray-300 italic mb-8 leading-relaxed">"{testimonio.text}"</p>
               <div className="flex items-center gap-4">
-                <img src={testimonio.image} alt={testimonio.name} className="w-12 h-12 rounded-full object-cover bg-gray-200" />
+                <img src={testimonio.image} alt={testimonio.name} className="w-12 h-12 rounded-full object-cover border border-white/10" />
                 <div>
-                  <h4 className="font-semibold text-gray-900">{testimonio.name}</h4>
+                  <h4 className="font-semibold text-white">{testimonio.name}</h4>
                   <span className="text-sm text-gray-500">{testimonio.role}</span>
                 </div>
               </div>
