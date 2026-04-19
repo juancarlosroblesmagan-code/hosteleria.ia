@@ -4,10 +4,9 @@ export default function Hero() {
   return (
     <section className="relative pt-20 pb-16 flex flex-col items-center overflow-hidden min-h-[90vh]">
       {/* Background Image with Dark Gradient Overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-background/95 lg:bg-background/90 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/40 z-10" />
-        <img src="/hero-restaurant.jpg" alt="Restaurante Fondo" className="w-full h-full object-cover object-right opacity-60" />
+      <div className="absolute inset-0 z-0 bg-background">
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent z-10" />
+        <img src="/hero-restaurant.jpg" alt="Restaurante Fondo" className="absolute top-0 right-0 w-full lg:w-2/3 h-full object-cover object-center opacity-80" />
       </div>
       
       <div className="container relative z-20 flex flex-col justify-center px-4 lg:px-8 max-w-7xl mx-auto flex-1">
