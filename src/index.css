@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Design System for AI Hospitality Agency */
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 40 30% 95%;
+
+    --card: 220 18% 8%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 220 18% 8%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 38 92% 50%;
+    --primary-foreground: 220 20% 4%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 40 30% 95%;
+
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 38 80% 45%;
+    --accent-foreground: 220 20% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 30% 95%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 38 92% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gold: 38 92% 50%;
+    --gold-light: 40 85% 65%;
+    --gold-dark: 35 90% 35%;
+    --warm-white: 40 30% 95%;
+    --charcoal: 220 20% 8%;
+    --charcoal-light: 220 18% 12%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%), hsl(40 85% 65%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 20% 4%), hsl(220 18% 8%));
+    --gradient-card: linear-gradient(145deg, hsl(220 18% 10%), hsl(220 20% 6%));
+    --gradient-hero: radial-gradient(ellipse at top, hsl(220 18% 12%), hsl(220 20% 4%));
+
+    /* Shadows */
+    --shadow-gold: 0 0 60px hsl(38 92% 50% / 0.15);
+    --shadow-card: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
+    --shadow-elevated: 0 20px 40px hsl(0 0% 0% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --sidebar-background: 220 20% 4%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 40 30% 95%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 38 92% 50%;
+  }
+
+  .dark {
+    --background: 220 20% 4%;
+    --foreground: 40 30% 95%;
+    --card: 220 18% 8%;
+    --card-foreground: 40 30% 95%;
+    --popover: 220 18% 8%;
+    --popover-foreground: 40 30% 95%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 220 20% 4%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 40 30% 95%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 38 80% 45%;
+    --accent-foreground: 220 20% 4%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 40 30% 95%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 38 92% 50%;
+    --sidebar-background: 220 20% 4%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 40 30% 95%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 30px hsl(38 92% 50% / 0.3), 0 0 60px hsl(38 92% 50% / 0.1);
+  }
+}
+
+/* ===== QR Card Page ===== */
+.qr-page {
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #0B0F17;
+  color: rgba(255,255,255,.92);
+  overflow-x: hidden;
+}
+
+.qr-bg {
+  position: fixed;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(1.05) contrast(1.02);
+  transform: scale(1.02);
+}
+.qr-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11,15,23,.72), rgba(11,15,23,.82) 40%, rgba(11,15,23,.92));
+}
+
+.qr-top {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(14px);
+  background: rgba(11,15,23,.40);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.qr-chip {
+  border: 1px solid rgba(240,228,200,.22);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 14px;
+}
+.qr-chip:active { transform: scale(.98); }
+
+.qr-wrap {
+  position: relative;
+  width: min(1060px, 92vw);
+  margin: 18px auto 46px;
+}
+
+.qr-card {
+  border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+  border-radius: 22px;
+  box-shadow: 0 22px 70px rgba(0,0,0,.45);
+}
+
+.qr-hero {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 16px;
+  padding: 18px;
+}
+
+.qr-hero-left { padding: 6px; }
+
+.qr-cta-row {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1.2fr .9fr .9fr;
+  gap: 10px;
+}
+
+.qr-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  text-decoration: none;
+  color: rgba(255,255,255,.92);
+  font-weight: 900;
+  letter-spacing: .15px;
+  font-size: 14px;
+  transition: transform .08s ease, background .20s ease, border-color .20s ease;
+  cursor: pointer;
+}
+.qr-btn:hover { background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.22); }
+.qr-btn:active { transform: scale(.98); }
+.qr-btn-primary {
+  background: linear-gradient(90deg, rgba(240,228,200,.28), rgba(255,153,51,.12));
+  border-color: rgba(240,228,200,.30);
+}
+
+.qr-pill {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.80);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+}
+.qr-pill:hover { background: rgba(255,255,255,.08); }
+
+.qr-hero-right { display: flex; }
+
+.qr-glass {
+  width: 100%;
+  border-radius: 18px;
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(16px);
+}
+
+.qr-kpi {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 10px;
+}
+
+.qr-grid2 {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.qr-copy {
+  width: 100%;
+  text-align: left;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.88);
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 14px;
+}
+.qr-copy:active { transform: scale(.99); }
+
+.qr-foot {
+  margin-top: 16px;
+  color: rgba(255,255,255,.55);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  font-size: 12px;
+  padding: 14px 0 4px;
+}
+
+@media (max-width: 860px) {
+  .qr-hero { grid-template-columns: 1fr; }
+  .qr-hero-right { margin-top: 6px; }
+  .qr-cta-row { grid-template-columns: 1fr; }
+  .qr-grid2 { grid-template-columns: 1fr; }
+}
